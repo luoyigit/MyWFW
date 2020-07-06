@@ -1,0 +1,9 @@
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\bin\Debug\netstandard2.0\Resilience.deps.json
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\bin\Debug\netstandard2.0\Resilience.dll
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\obj\Debug\netstandard2.0\Resilience.csprojAssemblyReference.cache
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\obj\Debug\netstandard2.0\Resilience.AssemblyInfoInputs.cache
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\obj\Debug\netstandard2.0\Resilience.AssemblyInfo.cs
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\bin\Debug\netstandard2.0\Resilience.pdb
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\obj\Debug\netstandard2.0\Resilience.csproj.CoreCompileInputs.cache
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\obj\Debug\netstandard2.0\Resilience.dll
+E:\vs2019\ocelotDemo\ocelotDemo\Resilience\obj\Debug\netstandard2.0\Resilience.pdb

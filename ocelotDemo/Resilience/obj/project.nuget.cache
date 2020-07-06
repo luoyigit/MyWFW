@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "3pppkPRe5n5KQB6GV3cxowO8UEsd8KoVAM+Am2vj4MPryIm/NFTSr0Xu8674bCJYqtz6iBUe7IL+ESpigKkcQA==",
+  "success": true,
+  "projectFilePath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\Resilience.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.5\\microsoft.aspnetcore.http.features.3.1.5.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.5\\microsoft.extensions.logging.abstractions.3.1.5.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.5\\microsoft.extensions.primitives.3.1.5.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\polly\\7.2.1\\polly.7.2.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\system.io.pipelines\\4.7.1\\system.io.pipelines.4.7.1.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

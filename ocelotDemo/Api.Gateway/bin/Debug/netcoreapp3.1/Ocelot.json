@@ -1,0 +1,57 @@
+{
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/{everything}",
+        "DownstreamScheme": "http",
+        "UpstreamPathTemplate": "/one/{everything}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "ServiceName": "OneApi",
+        "LoadBalancerOptions": {
+          "Type": "LeastConnection"
+        },
+        "UseServiceDiscovery": true
+      },
+      {
+        "DownstreamPathTemplate": "/{everything}",
+        "DownstreamScheme": "http",
+        "UpstreamPathTemplate": "/two/{everything}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "ServiceName": "TwoApi",
+        "LoadBalancerOptions": {
+          "Type": "LeastConnection"
+        },
+        "UseServiceDiscovery": true
+      }
+      //{
+      //  "DownstreamPathTemplate": "/{everything}",
+      //  "DownstreamScheme": "http",
+      //  "LoadBalancerOptions": {
+      //    "Type": "LeastConnection"
+      //  },
+      //  "DownstreamHostAndPorts": [
+      //    {
+      //      "Host": "localhost",
+      //      "Port": 64000
+      //    },
+      //    {
+      //      "Host": "localhost",
+      //      "Port": 65000
+      //    }
+      //  ],
+      //  "UpstreamPathTemplate": "/testapi/{everything}",
+      //  "UpstreamHttpMethod": [ "Get", "Post" ]
+      //}
+    ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://127.0.0.1:61114", //网关所在地址
+    "RequestIdKey": "OcelotRequestId",
+    "ServiceDiscoveryProvider": {
+      "Scheme": "http",
+      "Host": "127.0.0.1",
+      "Port": 8500,
+      "Type": "Consul",
+      "ConfigurationKey": "Ocelot_A",
+      "PollingInterval": 30
+    }
+  }
+}

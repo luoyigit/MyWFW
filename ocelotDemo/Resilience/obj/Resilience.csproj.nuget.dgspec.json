@@ -1,0 +1,91 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\Resilience.csproj": {}
+  },
+  "projects": {
+    "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\Resilience.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\Resilience.csproj",
+        "projectName": "Resilience",
+        "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\Resilience.csproj",
+        "packagesPath": "C:\\Users\\luoyi\\.nuget\\packages\\",
+        "outputPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luoyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "http://nuget.youzuowei.com.cn/nuget/": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cnblogs.com/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.Extensions.Primitives": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
