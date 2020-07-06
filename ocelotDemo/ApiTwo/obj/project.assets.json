@@ -5184,11 +5184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiTwo\\ApiTwo.csproj",
+      "projectUniqueName": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiTwo\\ApiTwo.csproj",
       "projectName": "ApiTwo",
-      "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiTwo\\ApiTwo.csproj",
+      "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiTwo\\ApiTwo.csproj",
       "packagesPath": "C:\\Users\\luoyi\\.nuget\\packages\\",
-      "outputPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiTwo\\obj\\",
+      "outputPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiTwo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5208,8 +5208,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
-              "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj"
+            "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
+              "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj"
             }
           }
         }

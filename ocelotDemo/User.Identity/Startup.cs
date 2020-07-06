@@ -62,10 +62,12 @@ namespace User.Identity
 
             services.AddIdentityServer()
                .AddExtensionGrantValidator<SmsAuthCodeValidator>()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                //.AddInMemoryApiScopes(Config.GetApiScopes())
                .AddDeveloperSigningCredential()
                .AddInMemoryApiResources(Config.GetApiResources())
-               .AddInMemoryClients(Config.GetClients())
-               .AddInMemoryIdentityResources(Config.GetIdentityResources());
+               .AddInMemoryClients(Config.GetClients());
+             
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

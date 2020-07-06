@@ -648,11 +648,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\Resilience.csproj",
+      "projectUniqueName": "E:\\vs2019\\MyWFW\\ocelotDemo\\Resilience\\Resilience.csproj",
       "projectName": "Resilience",
-      "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\Resilience.csproj",
+      "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\Resilience\\Resilience.csproj",
       "packagesPath": "C:\\Users\\luoyi\\.nuget\\packages\\",
-      "outputPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Resilience\\obj\\",
+      "outputPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\Resilience\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj": {}
+    "E:\\vs2019\\MyWFW\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj": {}
   },
   "projects": {
-    "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj": {
+    "E:\\vs2019\\MyWFW\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj",
+        "projectUniqueName": "E:\\vs2019\\MyWFW\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj",
         "projectName": "Api.Gateway",
-        "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj",
+        "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\Api.Gateway\\Api.Gateway.csproj",
         "packagesPath": "C:\\Users\\luoyi\\.nuget\\packages\\",
-        "outputPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\Api.Gateway\\obj\\",
+        "outputPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\Api.Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -48,7 +48,7 @@
             },
             "IdentityServer4": {
               "target": "Package",
-              "version": "[4.0.1, )"
+              "version": "[3.1.2, )"
             },
             "IdentityServer4.AccessTokenValidation": {
               "target": "Package",

@@ -7,3 +7,11 @@ E:\vs2019\ocelotDemo\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.csp
 E:\vs2019\ocelotDemo\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.dll
 E:\vs2019\ocelotDemo\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.pdb
 E:\vs2019\ocelotDemo\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.csprojAssemblyReference.cache
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\bin\Debug\netstandard2.0\ST.Common.deps.json
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\bin\Debug\netstandard2.0\ST.Common.dll
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\bin\Debug\netstandard2.0\ST.Common.pdb
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.AssemblyInfoInputs.cache
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.AssemblyInfo.cs
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.csproj.CoreCompileInputs.cache
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.dll
+E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.pdb

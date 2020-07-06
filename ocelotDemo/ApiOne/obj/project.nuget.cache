@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "pHZcSI9urRhV8P4KUE3WiHYGG2X+84jj9ZLS/7cGmBurjrADLJTLueo8Iqz/5eviEktJUBy4qcG+4I4MO+lJWg==",
+  "dgSpecHash": "wfGckJoS0hdHSBx1G6szKE0VS5Fkmu4vesfgsDQi3EvnmErEeyK+vuj+thR40DS8f30SvjeBQz0ICzJepBTO7w==",
   "success": true,
-  "projectFilePath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\ApiOne.csproj",
+  "projectFilePath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luoyi\\.nuget\\packages\\consul\\0.7.2.6\\consul.0.7.2.6.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\identitymodel.aspnetcore.oauth2introspection\\4.0.1\\identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\identityserver4.accesstokenvalidation\\3.0.1\\identityserver4.accesstokenvalidation.3.0.1.nupkg.sha512",
-    "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.0.0\\microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.5\\microsoft.aspnetcore.authentication.jwtbearer.3.1.5.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

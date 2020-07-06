@@ -23,9 +23,9 @@ namespace Api.Gateway
             //添加IdentityServer4身份认证
             //IdentityServer4.AccessTokenValidation
              services.AddAuthentication()
-                 .AddIdentityServerAuthentication("STUDY", options =>
+                 .AddIdentityServerAuthentication("TestKey", options =>
                  {
-                     options.Authority = "http://localhost:6000";
+                     options.Authority = "http://localhost:9000";
                      options.ApiName = "gateway_api";
                      options.SupportedTokens = SupportedTokens.Both;
                      options.ApiSecret = "secret";

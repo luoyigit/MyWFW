@@ -9,7 +9,11 @@
         "LoadBalancerOptions": {
           "Type": "LeastConnection"
         },
-        "UseServiceDiscovery": true
+        "UseServiceDiscovery": true,
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "TestKey",
+          "AllowedScopes": []
+        }
       },
       {
         "DownstreamPathTemplate": "/{everything}",

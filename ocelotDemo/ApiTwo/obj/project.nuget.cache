@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kAxlz3Uw9nzzlKKVAYqzOTn50YOpTYrh2rdZkn0bPAP138FVeULz0uwbKI/4bhEeOq54kkkU0zbVgQ7NelHFxQ==",
+  "dgSpecHash": "rXTWCP2YzKuhipw+LVAE6S5EImWwqGj3L8WYou0z68vlGUrcOBb9JNvHtTBIysRQagCv6qfqGLVgF1pqlXpNgA==",
   "success": true,
-  "projectFilePath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiTwo\\ApiTwo.csproj",
+  "projectFilePath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiTwo\\ApiTwo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luoyi\\.nuget\\packages\\consul\\0.7.2.6\\consul.0.7.2.6.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",

@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiOne.Controllers
 {
+    //[Authorize]
     [Route("[controller]")]
     [ApiController]
-    [Authorize]
     public class TestController : Controller
     {
         [HttpGet("")]

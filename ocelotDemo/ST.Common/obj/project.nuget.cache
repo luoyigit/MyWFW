@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XNNBUVHGnRc0c5/8xOILV5O8vgordg+jriZLtOskX74hHENglltAPFT44/lVnKO+Ncnk4DwAQHcYA97+88J4JQ==",
+  "dgSpecHash": "O/c2W3og1Liv4wwGIJTbbXE8NyH/KZdkdTwYgw2CW+1ENQkv8x2gK9oWEV8oeZIMMWi55IBEnwrjytvBYBFNtg==",
   "success": true,
-  "projectFilePath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj",
+  "projectFilePath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luoyi\\.nuget\\packages\\consul\\0.7.2.6\\consul.0.7.2.6.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",

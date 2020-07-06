@@ -12,14 +12,25 @@ namespace User.Identity
         {
             return new List<ApiResource>()
             {
-                //new ApiResource("gateway_api","gateway service"),
+                new ApiResource("gateway_api","gateway service"),
+                new ApiResource("one_api","one service"),
                 //new ApiResource("user_api", "user service"),
                 //new ApiResource("contact_api","contact service"),
                 //new ApiResource("project_api","project service"),
                 //new ApiResource("recommend_api","recommend service") 
-                new ApiResource("one_api", "one api"),
             };
         }
+        //public static IEnumerable<ApiScope> GetApiScopes()
+        //{
+        //    return new List<ApiScope>
+        //    {
+        //        // backward compat
+        //        new ApiScope("one_api.scope"),
+        //        new ApiScope("two_api.scope"),
+   
+        //    };
+        //}
+
 
         public static IEnumerable<Client> GetClients()
         {
@@ -36,12 +47,8 @@ namespace User.Identity
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowedScopes = new List<string>()
                     {
-                        //"gateway_api",
-                        //"user_api",
-                        //"contact_api",
-                        //"project_api",
-                        //"recommend_api",
-                        "one_api",
+                        "gateway_api",
+                         "one_api",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess

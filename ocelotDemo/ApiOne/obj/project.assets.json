@@ -77,16 +77,16 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.AspNetCore.Authentication.JwtBearer/3.0.0": {
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
         },
         "compile": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -1333,16 +1333,18 @@
         "lib/netcoreapp3.0/IdentityServer4.AccessTokenValidation.xml"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.JwtBearer/3.0.0": {
-      "sha512": "FrlxgBG6+FKlYr1IVxXNXSK7jpxiIYf036VNR1UgopKSIUNjaK2zvkhfVgFZVavagitQ/+UZ8Snnm6axyAVRNg==",
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.5": {
+      "sha512": "yIVf8D7YasN7x1kZDZWcZ+8bO5xiSdjpKscseRTA3/7QJsbeTGhZ1i2/9oqtTD4FTsENYeq8tAfTngy50r+x8Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.0.0",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
-        "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
-        "microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.3.1.5.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
@@ -4126,6 +4128,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "IdentityServer4.AccessTokenValidation >= 3.0.1",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.5",
       "ST.Common >= 1.0.0"
     ]
   },
@@ -4136,11 +4139,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\ApiOne.csproj",
+      "projectUniqueName": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj",
       "projectName": "ApiOne",
-      "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\ApiOne.csproj",
+      "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj",
       "packagesPath": "C:\\Users\\luoyi\\.nuget\\packages\\",
-      "outputPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\obj\\",
+      "outputPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4160,8 +4163,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
-              "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj"
+            "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
+              "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj"
             }
           }
         }
@@ -4178,6 +4181,10 @@
           "IdentityServer4.AccessTokenValidation": {
             "target": "Package",
             "version": "[3.0.1, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[3.1.5, )"
           }
         },
         "imports": [

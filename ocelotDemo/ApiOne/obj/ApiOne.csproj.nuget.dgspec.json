@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\ApiOne.csproj": {}
+    "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj": {}
   },
   "projects": {
-    "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\ApiOne.csproj": {
+    "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\ApiOne.csproj",
+        "projectUniqueName": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj",
         "projectName": "ApiOne",
-        "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\ApiOne.csproj",
+        "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj",
         "packagesPath": "C:\\Users\\luoyi\\.nuget\\packages\\",
-        "outputPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ApiOne\\obj\\",
+        "outputPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
-                "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj"
+              "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
+                "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj"
               }
             }
           }
@@ -49,6 +49,10 @@
             "IdentityServer4.AccessTokenValidation": {
               "target": "Package",
               "version": "[3.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [
@@ -73,14 +77,14 @@
         }
       }
     },
-    "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
+    "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj",
+        "projectUniqueName": "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj",
         "projectName": "ST.Common",
-        "projectPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\ST.Common.csproj",
+        "projectPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\ST.Common.csproj",
         "packagesPath": "C:\\Users\\luoyi\\.nuget\\packages\\",
-        "outputPath": "E:\\vs2019\\ocelotDemo\\ocelotDemo\\ST.Common\\obj\\",
+        "outputPath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ST.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
