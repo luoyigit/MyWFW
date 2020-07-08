@@ -96,5 +96,3 @@ E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\staticwebassets\ApiOne
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.dll
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.pdb
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.genruntimeconfig.cache
-E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.csproj.CoreCompileInputs.cache
-E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.MvcApplicationPartsAssemblyInfo.cache

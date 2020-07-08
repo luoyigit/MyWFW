@@ -91,3 +91,4 @@ E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\staticwebassets\A
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.dll
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.pdb
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.genruntimeconfig.cache
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.csprojAssemblyReference.cache

@@ -69,8 +69,6 @@ E:\vs2019\MyWFW\ocelotDemo\ApiTwo\bin\Debug\netcoreapp3.1\ST.Common.pdb
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.csprojAssemblyReference.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.AssemblyInfoInputs.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.AssemblyInfo.cs
-E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.csproj.CoreCompileInputs.cache
-E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.MvcApplicationPartsAssemblyInfo.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.RazorTargetAssemblyInfo.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.csproj.CopyComplete
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\staticwebassets\ApiTwo.StaticWebAssets.Manifest.cache

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wfGckJoS0hdHSBx1G6szKE0VS5Fkmu4vesfgsDQi3EvnmErEeyK+vuj+thR40DS8f30SvjeBQz0ICzJepBTO7w==",
+  "dgSpecHash": "bHfIEsF5vvvek8acedxb5NeaMzws/kYn5KHYIO5t8lVnD2lS6yX9ucnu/3Rd8fUuaXg6wjJoYJOdAhzvBRN9fw==",
   "success": true,
   "projectFilePath": "E:\\vs2019\\MyWFW\\ocelotDemo\\ApiOne\\ApiOne.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\luoyi\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

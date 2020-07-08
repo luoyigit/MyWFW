@@ -10,6 +10,7 @@
           "Type": "LeastConnection"
         },
         "UseServiceDiscovery": true,
+        //如果不加就不需要验证
         "AuthenticationOptions": {
           "AuthenticationProviderKey": "TestKey",
           "AllowedScopes": []
