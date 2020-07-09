@@ -4,6 +4,260 @@
         <name>User.Api</name>
     </assembly>
     <members>
+        <member name="T:User.Api.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:User.Api.Controllers.UserController.#ctor(User.Api.Data.UserContext,Microsoft.Extensions.Logging.ILogger{User.Api.Controllers.UserController},DotNetCore.CAP.ICapPublisher)">
+            <summary>
+            
+            </summary>
+            <param name="userContext"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:User.Api.Controllers.UserController.Get">
+            <summary>
+            登录用户获取个人信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:User.Api.Controllers.UserController.Patch(Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{User.Api.Models.AppUser})">
+            <summary>
+            用户更新个人信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:User.Api.Controllers.UserController.CheckOrCreateUser(System.String)">
+            <summary>
+            检查或则创建用户 并返回用户基本信息
+            </summary>
+            <param name="phone">手机号码</param>
+            <returns>用户ID</returns>
+        </member>
+        <member name="M:User.Api.Controllers.UserController.UpdateTags(System.Collections.Generic.List{System.String})">
+            <summary>
+            更新用户标签数据
+            </summary>
+            <param name="tags">用户标签数据</param>
+            <returns></returns>       
+        </member>
+        <member name="M:User.Api.Controllers.UserController.GetUserTagsAsync">
+            <summary>
+            获取用户标签数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:User.Api.Controllers.UserController.Search(System.String)">
+            <summary>
+            通过手机号查询信息
+            </summary>
+            <param name="phone">手机号</param>
+            <returns>人员信息</returns>
+            
+        </member>
+        <member name="M:User.Api.Controllers.UserController.GetUserBaseInfoAsync(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="P:User.Api.IntergrationEventService.UserInfoEventModel.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:User.Api.IntergrationEventService.UserInfoEventModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:User.Api.IntergrationEventService.UserInfoEventModel.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:User.Api.IntergrationEventService.UserInfoEventModel.Title">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:User.Api.IntergrationEventService.UserInfoEventModel.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Id">
+            <summary>
+            自增ID
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Name">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Title">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Phone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Avatar">
+            <summary>
+            头像地址
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Gender">
+            <summary>
+            性别：1：男 0：女
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Address">
+            <summary>
+            详细地址
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Email">
+            <summary>
+            邮箱地址
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Tel">
+            <summary>
+            公司电话
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.ProvinceId">
+            <summary>
+            省份ID
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Province">
+            <summary>
+            省份名称
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.CityId">
+            <summary>
+            城市ID
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.City">
+            <summary>
+            城市名称
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.NameCard">
+            <summary>
+            名片地址
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.AppUser.Properties">
+            <summary>
+            用户属性列表
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.BPFile.Id">
+            <summary>
+            BP Id       
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.BPFile.AppUserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.BPFile.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.BPFile.OriginFilePath">
+            <summary>
+            上传的源文件地址
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.BPFile.FormatFilePath">
+            <summary>
+            格式转换后的文件地址
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.BPFile.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:User.Api.Models.Dtos.UserIdentity">
+            <summary>
+            登录用户信息
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserIdentity.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserIdentity.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserIdentity.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserIdentity.Title">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserIdentity.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="T:User.Api.Models.UserProperty">
+             <summary>
+            用户属性
+             </summary>
+        </member>
+        <member name="P:User.Api.Models.UserProperty.AppUserId">
+            <summary>
+            关联用户ID
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.UserProperty.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.UserProperty.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.UserProperty.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:User.Api.Models.UserTag">
+            <summary>
+            用户标签
+            </summary>
+        </member>
         <member name="T:User.Api.Properties.Resources">
             <summary>
               一个强类型的资源类，用于查找本地化的字符串等。
