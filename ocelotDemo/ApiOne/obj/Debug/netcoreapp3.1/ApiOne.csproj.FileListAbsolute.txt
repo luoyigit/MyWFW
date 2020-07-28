@@ -89,6 +89,8 @@ E:\vs2019\MyWFW\ocelotDemo\ApiOne\bin\Debug\netcoreapp3.1\ST.Common.pdb
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.csprojAssemblyReference.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.AssemblyInfoInputs.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.AssemblyInfo.cs
+E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.csproj.CoreCompileInputs.cache
+E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.MvcApplicationPartsAssemblyInfo.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.RazorTargetAssemblyInfo.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\ApiOne.csproj.CopyComplete
 E:\vs2019\MyWFW\ocelotDemo\ApiOne\obj\Debug\netcoreapp3.1\staticwebassets\ApiOne.StaticWebAssets.Manifest.cache

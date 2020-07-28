@@ -55,7 +55,7 @@ namespace User.Api.Controllers
         }
 
         /// <summary>
-        /// 用户更新个人信息
+        /// 用户更新个人信息（Patch做部分更新）
         /// </summary>
         /// <returns></returns>
         [Route("")]

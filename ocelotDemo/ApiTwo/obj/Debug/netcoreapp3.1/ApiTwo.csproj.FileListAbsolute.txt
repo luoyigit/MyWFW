@@ -76,3 +76,5 @@ E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\staticwebassets\ApiTwo
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.dll
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.pdb
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.genruntimeconfig.cache
+E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.csproj.CoreCompileInputs.cache
+E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.MvcApplicationPartsAssemblyInfo.cache

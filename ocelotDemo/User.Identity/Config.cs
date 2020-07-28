@@ -15,7 +15,7 @@ namespace User.Identity
                 new ApiResource("gateway_api","gateway service"),
                 new ApiResource("one_api","one service"),
                 //new ApiResource("user_api", "user service"),
-                //new ApiResource("contact_api","contact service"),
+                new ApiResource("contact_api","contact service"),
                 //new ApiResource("project_api","project service"),
                 //new ApiResource("recommend_api","recommend service") 
             };
@@ -40,15 +40,20 @@ namespace User.Identity
                 {
                     ClientId = "web",
                     ClientSecrets = new List<Secret>(){new Secret("secret".Sha256())},
+                    //RefreshTokenExpiration = TokenExpiration.Sliding,
                     RefreshTokenExpiration = TokenExpiration.Sliding,
                     AllowOfflineAccess = true,
                     RequireClientSecret = false,
-                    AllowedGrantTypes = new List<string>(){"sms_auth_code"},// 继承IExtensionGrantValidator
+                    RefreshTokenUsage = TokenUsage.OneTimeOnly,
+                    AllowedGrantTypes = new List<string>(){"sms_auth_code","refresh_token"},// 继承IExtensionGrantValidator
                     AlwaysIncludeUserClaimsInIdToken = true,
+                  
                     AllowedScopes = new List<string>()
                     {
                         "gateway_api",
                          "one_api",
+                         "offline_access",
+                          "contact_api",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess

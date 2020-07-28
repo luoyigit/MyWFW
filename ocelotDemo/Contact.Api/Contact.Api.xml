@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Contact.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Contact.Api.Controllers.ContactController.GetContactsAsync(System.Threading.CancellationToken)">
+            <summary>
+            获取好友列表
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Controllers.ContactController.GetContactsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            获取好友列表
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Controllers.ContactController.TagContactAsync(Contact.Api.Dtos.ContactTagVModel,System.Threading.CancellationToken)">
+            <summary>
+            给好友打标签
+            </summary>
+            <param name="model"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Controllers.ContactController.GetApplyRequest">
+            <summary>
+            获取好友申请列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Controllers.ContactController.AddApplyRequestAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            添加好友 请求
+            </summary>
+            <param name="applierId">申请添加的好友ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Controllers.ContactController.ApproveRequestAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            通过好友请求
+            </summary>
+            <param name="applierId">申请人ID</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Data.ContactContext.CheckAndCreateCollection(System.String)">
+            <summary>
+            确保表空间已经创建
+            </summary>
+            <param name="collectionName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Contact.Api.Data.ContactContext.ContactBooks">
+            <summary>
+            用户通讯录集合
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Data.ContactContext.ContactApplyRequests">
+            <summary>
+            好友申请请求集合
+            </summary>
+        </member>
+        <member name="T:Contact.Api.Data.IContactApplyRequestRepository">
+            <summary>
+            好友申请仓储
+            </summary>
+        </member>
+        <member name="M:Contact.Api.Data.IContactApplyRequestRepository.AddRequestAsync(Contact.Api.Models.ContactApplyRequest,System.Threading.CancellationToken)">
+            <summary>
+            添加好友申请请求
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Data.IContactApplyRequestRepository.ApprovalAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            通过好友申请
+            </summary>
+            <param name="userId">操作者ID</param>
+            <param name="applierId">申请人ID</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Data.IContactApplyRequestRepository.GetRequestList(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            获取好友添加申请
+            </summary>
+            <param name="userId">当前登录用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:Contact.Api.Data.IContactBookRepository">
+            <summary>
+            好友通讯录仓储
+            </summary>
+        </member>
+        <member name="M:Contact.Api.Data.IContactBookRepository.UpdateUserInfoAsync(Contact.Api.Dtos.BaseUserInfo,System.Threading.CancellationToken)">
+            <summary>
+            更新用户信息
+            </summary>
+            <param name="baseUserInfo">要更新的用户信息</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Data.IContactBookRepository.GetContactsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            获取好友列表
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="cancellationToken"></param>
+            <returns>用户好友列表</returns>
+        </member>
+        <member name="M:Contact.Api.Data.IContactBookRepository.TagContactAsync(System.Int32,System.Int32,System.Collections.Generic.List{System.String},System.Threading.CancellationToken)">
+            <summary>
+            给好友打标签
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="contactId">好友ID</param>
+            <param name="tags">标签列表</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Data.IContactBookRepository.AddContactAsync(System.Int32,Contact.Api.Dtos.BaseUserInfo,System.Threading.CancellationToken)">
+            <summary>
+            添加好友
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="baseUserInfo">待添加的用户信息</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Contact.Api.Dtos.BaseUserInfo.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.BaseUserInfo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.BaseUserInfo.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.BaseUserInfo.Title">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.BaseUserInfo.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="T:Contact.Api.Dtos.ContactTagVModel">
+            <summary>
+            给好友打标签
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.ContactTagVModel.UserId">
+            <summary>
+            好友ID
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.ContactTagVModel.Tags">
+            <summary>
+            标签信息
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.UserIdentity.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.UserIdentity.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.UserIdentity.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.UserIdentity.Title">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Dtos.UserIdentity.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="M:Contact.Api.Infrastructure.IResilientHttpClientFactory.CreateResilientHttpClient">
+            <summary>
+            创建 ResilientHttpClient 实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Contact.Api.Models.Contact">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.Contact.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.Contact.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.Contact.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.Contact.Title">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.Contact.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.Contact.Tags">
+            <summary>
+            用户标签
+            </summary>
+        </member>
+        <member name="T:Contact.Api.Models.ContactApplyRequest">
+            <summary>
+            好友申请
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.UserId">
+            <summary>
+            被申请用户ID
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.Name">
+            <summary>
+            申请人名称
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.Company">
+            <summary>
+            申请人公司
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.Title">
+            <summary>
+            申请人职位
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.Avatar">
+            <summary>
+            申请人头像
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.ApplierId">
+            <summary>
+            申请人ID
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.Approvaled">
+            <summary>
+            是否通过 0未通过 1已通过
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.HandleTime">
+            <summary>
+            处理时间
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactApplyRequest.ApplyTime">
+            <summary>
+            申请时间
+            </summary>
+        </member>
+        <member name="T:Contact.Api.Models.ContactBook">
+            <summary>
+            通讯录
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactBook.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Contact.Api.Models.ContactBook.Contacts">
+            <summary>
+            好友列表
+            </summary>
+        </member>
+        <member name="M:Contact.Api.Services.IUserService.GetBaseUserInfoAsync(System.Int32)">
+            <summary>
+            获取用户基本信息
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Services.UserService.GetServiceUrlFromConsulAsync">
+            <summary>
+            从Consul发现用户服务地址
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

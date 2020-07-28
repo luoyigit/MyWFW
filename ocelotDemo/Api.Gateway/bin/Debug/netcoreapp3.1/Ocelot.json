@@ -1,51 +1,91 @@
 {
-    "Routes": [
-      {
-        "DownstreamPathTemplate": "/{everything}",
-        "DownstreamScheme": "http",
-        "UpstreamPathTemplate": "/one/{everything}",
-        "UpstreamHttpMethod": [ "Get" ],
-        "ServiceName": "OneApi",
-        "LoadBalancerOptions": {
-          "Type": "LeastConnection"
-        },
-        "UseServiceDiscovery": true,
-        "AuthenticationOptions": {
-          "AuthenticationProviderKey": "TestKey",
-          "AllowedScopes": []
-        }
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/one/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "ServiceName": "OneApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
       },
-      {
-        "DownstreamPathTemplate": "/{everything}",
-        "DownstreamScheme": "http",
-        "UpstreamPathTemplate": "/two/{everything}",
-        "UpstreamHttpMethod": [ "Get" ],
-        "ServiceName": "TwoApi",
-        "LoadBalancerOptions": {
-          "Type": "LeastConnection"
-        },
-        "UseServiceDiscovery": true
+      "UseServiceDiscovery": true,
+      //如果不加就不需要验证
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
       }
-      //{
-      //  "DownstreamPathTemplate": "/{everything}",
-      //  "DownstreamScheme": "http",
-      //  "LoadBalancerOptions": {
-      //    "Type": "LeastConnection"
-      //  },
-      //  "DownstreamHostAndPorts": [
-      //    {
-      //      "Host": "localhost",
-      //      "Port": 64000
-      //    },
-      //    {
-      //      "Host": "localhost",
-      //      "Port": 65000
-      //    }
-      //  ],
-      //  "UpstreamPathTemplate": "/testapi/{everything}",
-      //  "UpstreamHttpMethod": [ "Get", "Post" ]
-      //}
-    ],
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/two/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "ServiceName": "TwoApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/contact/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "ServiceName": "ContactApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/.well-known/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9000
+        }
+      ],
+      "UpstreamPathTemplate": "/.well-known/{catchAll}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/connect/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9000
+        }
+      ],
+      "UpstreamPathTemplate": "/connect/{catchAll}",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+    //{
+    //  "DownstreamPathTemplate": "/{everything}",
+    //  "DownstreamScheme": "http",
+    //  "LoadBalancerOptions": {
+    //    "Type": "LeastConnection"
+    //  },
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 64000
+    //    },
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 65000
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/testapi/{everything}",
+    //  "UpstreamHttpMethod": [ "Get", "Post" ]
+    //}
+  ],
   "GlobalConfiguration": {
     "BaseUrl": "http://127.0.0.1:61114", //网关所在地址
     "RequestIdKey": "OcelotRequestId",

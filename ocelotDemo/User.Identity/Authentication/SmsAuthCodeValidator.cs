@@ -51,6 +51,7 @@ namespace User.Identity.Authentication
             userInfo.Title = "denglu";
             userInfo.Company = "hw";
             userInfo.Avatar = "2222";
+            userInfo.UserId = 3;
             #endregion
 
             //构建UserClaims
@@ -59,7 +60,8 @@ namespace User.Identity.Authentication
                 new Claim("name",userInfo.Name??string.Empty),
                 new Claim("title",userInfo.Title??string.Empty),
                 new Claim("company",userInfo.Company??string.Empty),
-                new Claim("avatar",userInfo.Avatar??string.Empty)
+                new Claim("avatar",userInfo.Avatar??string.Empty),
+                new Claim("sub",userInfo.UserId.ToString())
             };
             context.Result = new GrantValidationResult(userInfo.UserId.ToString(), GrantType, claims);
         }

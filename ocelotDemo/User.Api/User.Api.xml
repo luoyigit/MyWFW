@@ -24,7 +24,7 @@
         </member>
         <member name="M:User.Api.Controllers.UserController.Patch(Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{User.Api.Models.AppUser})">
             <summary>
-            用户更新个人信息
+            用户更新个人信息（Patch做部分更新）
             </summary>
             <returns></returns>
         </member>

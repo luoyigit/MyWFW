@@ -17,9 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resilience", "Resilience\Resilience.csproj", "{BB46E39C-1A7F-453A-8F4B-452B0D527F10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Api", "User.Api\User.Api.csproj", "{44571395-6590-43C4-8AF4-48AA0247ADB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Api", "User.Api\User.Api.csproj", "{44571395-6590-43C4-8AF4-48AA0247ADB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ST.Infrastructure", "ST.Infrastructure\ST.Infrastructure.csproj", "{C7F539CA-A725-4CD0-9C4F-74E3DB60AAE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ST.Infrastructure", "ST.Infrastructure\ST.Infrastructure.csproj", "{C7F539CA-A725-4CD0-9C4F-74E3DB60AAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contact.Api", "Contact.Api\Contact.Api.csproj", "{18B402BA-5B12-4D5A-B46D-68306F5996E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{C7F539CA-A725-4CD0-9C4F-74E3DB60AAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7F539CA-A725-4CD0-9C4F-74E3DB60AAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7F539CA-A725-4CD0-9C4F-74E3DB60AAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18B402BA-5B12-4D5A-B46D-68306F5996E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B402BA-5B12-4D5A-B46D-68306F5996E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B402BA-5B12-4D5A-B46D-68306F5996E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B402BA-5B12-4D5A-B46D-68306F5996E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
