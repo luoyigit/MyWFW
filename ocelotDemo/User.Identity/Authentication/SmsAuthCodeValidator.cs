@@ -37,21 +37,21 @@ namespace User.Identity.Authentication
                 context.Result = errorValidationResult;
                 return;
             }
-            //var userInfo = await _userService.GetOrCreateAsync(phone);
-            //if (userInfo == null)
-            //{
-            //    //如果用户ID小于等于0 ，验证失败
-            //    context.Result = errorValidationResult;
-            //    return;
-            //}
+            var userInfo = await _userService.GetOrCreateAsync(phone);
+            if (userInfo == null)
+            {
+                //如果用户ID小于等于0 ，验证失败
+                context.Result = errorValidationResult;
+                return;
+            }
 
             #region 测试代码
-            var userInfo = new BaseUserInfo();
-            userInfo.Name = "luoyi";
-            userInfo.Title = "denglu";
-            userInfo.Company = "hw";
-            userInfo.Avatar = "2222";
-            userInfo.UserId = 3;
+            //var userInfo = new BaseUserInfo();
+            //userInfo.Name = "luoyi";
+            //userInfo.Title = "denglu";
+            //userInfo.Company = "hw";
+            //userInfo.Avatar = "2222";
+            //userInfo.UserId = 3;
             #endregion
 
             //构建UserClaims

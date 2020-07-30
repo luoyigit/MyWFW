@@ -8,6 +8,8 @@ using Contact.Api.Data;
 using Contact.Api.Dtos;
 using Contact.Api.Infrastructure;
 using Contact.Api.Services;
+using Contact.API.IntergrationEvents.EventHandling;
+using DotNetCore.CAP.Dashboard.NodeDiscovery;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -80,9 +82,27 @@ namespace Contact.Api
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IContactApplyRequestRepository, MongoContactApplyRequestRepository>();
             services.AddScoped<IContactBookRepository, MongoContactBookRepository>();
-
+            services.AddScoped<UserProfileChangedEventHandler>(); //要注册进来，否则cap找不到订阅者
             services.AddControllers();
 
+   
+            services.AddCap(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("SqlServerContact"))
+                    .UseRabbitMQ("localhost");
+
+                options.UseDashboard();
+
+                options.UseDiscovery(d =>
+                    {
+                        d.DiscoveryServerHostName = "192.168.1.165";
+                        d.DiscoveryServerPort = 8500;
+                        d.CurrentNodeHostName = "localhost";
+                        d.CurrentNodePort = 5002;
+                        d.NodeId = "2";
+                        d.NodeName = "CAP ContactAPI Node";
+                    });
+            });
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
@@ -93,6 +113,7 @@ namespace Contact.Api
                     //options.Authority = "http://localhost:61114"; //一般写网关地址进行转发（因为indentity server 可能有多个）
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "contact_api";
+                    options.SaveToken = true; //保存token，在发起user_api的时候可以取出带上
 
                 });
         }

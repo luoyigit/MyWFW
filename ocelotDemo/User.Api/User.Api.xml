@@ -28,6 +28,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:User.Api.Controllers.UserController.ModifyUser(User.Api.Models.AppUser)">
+            <summary>
+            post修改用户
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="M:User.Api.Controllers.UserController.CheckOrCreateUser(System.String)">
             <summary>
             检查或则创建用户 并返回用户基本信息
@@ -226,6 +233,26 @@
         <member name="P:User.Api.Models.Dtos.UserIdentity.Avatar">
             <summary>
             头像
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserProfileChangedEvent.Avatar">
+            <summary>
+            头像地址
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserProfileChangedEvent.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserProfileChangedEvent.Title">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:User.Api.Models.Dtos.UserProfileChangedEvent.Name">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:User.Api.Models.UserProperty">

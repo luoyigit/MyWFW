@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using DotNetCore.CAP;
 using DotNetCore.CAP.Dashboard.NodeDiscovery;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -72,23 +74,35 @@ namespace User.Api
                 options.AddSecurityDefinition("Bearer", bearerScheme);
             });
             services.AddTransient<IUserCreateSubscriberService, UserCreateSubscriberService>();
-            //services.AddCap(options =>
-            //{
-            //    //docker安装RabbitMQ：docker run --name rabbitmq -d -p 15672:15672 -p 5672:5672 rabbitmq:3-management
-            //    options.UseEntityFramework<UserContext>()
-            //        .UseRabbitMQ("localhost")
-            //        .UseDashboard();
 
-            //    options.UseDiscovery(d =>
-            //    {
-            //        d.DiscoveryServerHostName = "localhost";
-            //        d.DiscoveryServerPort = 8500;
-            //        d.CurrentNodeHostName = "localhost";
-            //        d.CurrentNodePort = 5000;
-            //        d.NodeId = "1";
-            //        d.NodeName = "CAP User API Node";
-            //    });
-            //});
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(options =>
+                {
+                    //options.Authority = "http://localhost:9000";
+                    options.Authority = "http://localhost:61114"; //一般写网关地址进行转发（因为indentity server 可能有多个）
+                    options.RequireHttpsMetadata = false;
+                    options.ApiName = "user_api";
+
+                });
+            services.AddCap(options =>
+            {
+                //docker安装RabbitMQ：docker run --name rabbitmq -d -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+                options.UseEntityFramework<UserContext>()
+                    .UseRabbitMQ("localhost")
+                    .UseDashboard();
+
+                //服务发现的服务器节点
+                options.UseDiscovery(d =>
+                {
+                    d.DiscoveryServerHostName = "192.168.1.165";
+                    d.DiscoveryServerPort = 8500;
+                    d.CurrentNodeHostName = "localhost";
+                    d.CurrentNodePort = 5001;
+                    d.NodeId = "1";
+                    d.NodeName = "CAP User API Node";
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -100,6 +114,7 @@ namespace User.Api
             }
 
             app.UseRouting();
+            app.UseAuthentication(); //获取claims的关键
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
@@ -111,7 +126,8 @@ namespace User.Api
                 options.ShowExtensions();
                 options.SwaggerEndpoint("/swagger/userApi/swagger.json", "UserApi V1");
             });
-            //app.UseCapDashboard();
+            app.UseCapDashboard();
+            //app.UseCap();
             //启用服务注册于发现
             app.UseConsul();
             //dataInit(app);

@@ -20,7 +20,36 @@ namespace Contact.Api.Data
             _context = contactContext;
             _logger = logger;
         }
-        
+        public async Task<bool> UpdateContactInfo(UserIdentity userInfo, CancellationToken cancellationToken)
+        {
+            //查找该用户的通讯录，如果没没有通讯录则返回
+            var contactBook = (await _context.ContactBooks.FindAsync(c => c.UserId == userInfo.UserId, null, cancellationToken)).FirstOrDefault(cancellationToken);//.ToList(cancellationToken);
+            if (contactBook == null)
+            {
+                return true;
+            }
+
+            //取出该用户的 所有联系人的id
+            var contactIds = contactBook.Contacts.Select(c => c.UserId);
+            //有通讯录，用mongodb的关联内部查询方式匹配
+            //定义 filterdifinition 用and 条件连接符
+            //所有联系人的contactBook 
+            //contackbook 中的 contact.UserId==userInfo.UserId 
+            var filter = Builders<ContactBook>.Filter.And(
+                Builders<ContactBook>.Filter.In(c => c.UserId, contactIds),
+                Builders<ContactBook>.Filter.ElemMatch(c => c.Contacts, contact => contact.UserId == userInfo.UserId)
+            );
+
+            //定义 updatedefinition
+            var update = Builders<ContactBook>.Update
+                .Set("Contacts.$.Name", userInfo.Name)
+                .Set("Contacts.$.Avatar", userInfo.Avatar)
+                .Set("Contacts.$.Company", userInfo.Company)
+                .Set("Contacts.$.Title", userInfo.Title);
+
+            var updateResult = _context.ContactBooks.UpdateMany(filter, update);
+            return updateResult.MatchedCount == updateResult.ModifiedCount && updateResult.MatchedCount == long.Parse("1");
+        }
         public async Task<bool> UpdateUserInfoAsync(BaseUserInfo baseUserInfo, CancellationToken cancellationToken)
         {
             var contactBook =

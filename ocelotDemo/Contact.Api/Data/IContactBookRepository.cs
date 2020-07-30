@@ -18,6 +18,7 @@ namespace Contact.Api.Data
         /// <returns></returns>
         Task<bool> UpdateUserInfoAsync(BaseUserInfo baseUserInfo, CancellationToken cancellationToken);
 
+        Task<bool> UpdateContactInfo(UserIdentity userInfo, CancellationToken cancellationToken);
 
         /// <summary>
         /// 获取好友列表

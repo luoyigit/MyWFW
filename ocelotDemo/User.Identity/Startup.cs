@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DnsClient;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,10 +12,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Resilience;
 using ST.Common.Consul;
 using User.Identity.Authentication;
 using User.Identity.Infrastructure;
+using User.Identity.Models;
 using User.Identity.Services;
 
 namespace User.Identity
@@ -31,7 +34,16 @@ namespace User.Identity
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+
+            services.AddIdentityServer()
+          .AddExtensionGrantValidator<SmsAuthCodeValidator>()
+           .AddInMemoryIdentityResources(Config.GetIdentityResources())
+          //.AddInMemoryApiScopes(Config.GetApiScopes())
+          .AddDeveloperSigningCredential()
+          .AddInMemoryApiResources(Config.GetApiResources())
+          .AddInMemoryClients(Config.GetClients());
+
+          
             services.AddTransient<IProfileService, UserProfileService>();
 
             //×¢ÈëApplication Service
@@ -60,14 +72,16 @@ namespace User.Identity
             services.AddConsulClient(Configuration.GetSection("ServiceDiscovery"))
                 .AddDnsClient();
 
-            services.AddIdentityServer()
-               .AddExtensionGrantValidator<SmsAuthCodeValidator>()
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                //.AddInMemoryApiScopes(Config.GetApiScopes())
-               .AddDeveloperSigningCredential()
-               .AddInMemoryApiResources(Config.GetApiResources())
-               .AddInMemoryClients(Config.GetClients());
-             
+
+
+            //services.Configure<ServiceDiscoveryOptions>(Configuration.GetSection("ServiceDiscovery"));
+            //services.AddSingleton<IDnsQuery>(p =>
+            //{
+            //    var serviceConfiguration = p.GetRequiredService<IOptions<ServiceDiscoveryOptions>>().Value;
+            //    return new LookupClient(serviceConfiguration.Consul.DnsEndPoint.ToIpEndPoint());
+            //});
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

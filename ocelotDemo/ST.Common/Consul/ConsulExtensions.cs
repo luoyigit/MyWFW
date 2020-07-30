@@ -114,7 +114,7 @@ namespace ST.Common.Consul
                     var httpCheck = new AgentServiceCheck()
                     {
                         DeregisterCriticalServiceAfter = TimeSpan.FromMinutes(1), //错误时间超过1分钟，移除
-                        Interval = TimeSpan.FromSeconds(3), //30秒检查一次
+                        Interval = TimeSpan.FromSeconds(10), //30秒检查一次
                         HTTP = new Uri(address, "HealthCheck").OriginalString
                     };
 

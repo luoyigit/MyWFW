@@ -1,11 +1,14 @@
 using DnsClient;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Polly;
 using Resilience;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using User.Identity.Models;
 
@@ -116,14 +119,15 @@ namespace User.Identity.Services
 
 
                 return await policyWary.ExecuteAsync(async () =>
-                   {
-                       var result = await _dnsQuery.ResolveServiceAsync("service.consul", "UserApi");
-                       var addressList = result.First().AddressList;
-                       var address = addressList.Any() ? addressList.First().ToString() : result.First().HostName;
-                       var port = result.First().Port;
-                       var appUrl = $"http://{address}:{port}{QueryAction}";
-                       return appUrl;
-                   });
+                {
+                    var result2 = await _dnsQuery.ResolveServiceAsync("service.consul", "OneApi"); //如果是本地的address就为空
+                    var result = await _dnsQuery.ResolveServiceAsync("service.consul", "UserApi");
+                    var addressList = result.First().AddressList;
+                    var address = addressList.Any() ? addressList.First().ToString() : result.First().HostName;
+                    var port = result.First().Port;
+                    var appUrl = $"http://{address??"127.0.0.1"}:{port}{QueryAction}";
+                    return appUrl;
+                });
             }
             catch (Exception ex)
             {

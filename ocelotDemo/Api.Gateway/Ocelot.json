@@ -43,26 +43,52 @@
       }
     },
     {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/user/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "ServiceName": "UserApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
+    },
+    {
       "DownstreamPathTemplate": "/.well-known/{catchAll}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 9000
-        }
-      ],
+      "ServiceName": "IdentityApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true,
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 9000
+      //  }
+      //],
       "UpstreamPathTemplate": "/.well-known/{catchAll}",
       "UpstreamHttpMethod": [ "Get" ]
     },
+    //ÊÚÈ¨Íø¹Ø
     {
       "DownstreamPathTemplate": "/connect/{catchAll}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 9000
-        }
-      ],
+      "ServiceName": "IdentityApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true,
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "localhost",
+      //    "Port": 9000
+      //  }
+      //],
       "UpstreamPathTemplate": "/connect/{catchAll}",
       "UpstreamHttpMethod": [ "Post" ]
     }
@@ -91,7 +117,7 @@
     "RequestIdKey": "OcelotRequestId",
     "ServiceDiscoveryProvider": {
       "Scheme": "http",
-      "Host": "127.0.0.1",
+      "Host": "192.168.1.165",
       "Port": 8500,
       "Type": "Consul",
       "ConfigurationKey": "Ocelot_A",

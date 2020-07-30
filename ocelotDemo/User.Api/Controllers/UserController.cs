@@ -53,48 +53,116 @@ namespace User.Api.Controllers
 
             return Ok(user);
         }
-
+        private void RaiseUserprofileChangedEvent(AppUser user)
+        {
+            if (_userContext.Entry(user).Property(nameof(user.Name)).IsModified ||
+                _userContext.Entry(user).Property(nameof(user.Title)).IsModified ||
+                _userContext.Entry(user).Property(nameof(user.Company)).IsModified ||
+                _userContext.Entry(user).Property(nameof(user.Avatar)).IsModified
+            )
+            {
+                _publisher.Publish("finbook_userapi_userprofilechanged", new UserProfileChangedEvent
+                {
+                    UserId = user.Id,
+                    Name = user.Name,
+                    Avatar = user.Avatar,
+                    Title = user.Title,
+                });
+            }
+        }
         /// <summary>
         /// 用户更新个人信息（Patch做部分更新）
         /// </summary>
         /// <returns></returns>
+        //[Route("")]
+        //[HttpPatch]
+        //public async Task<IActionResult> Patch([FromBody] JsonPatchDocument<AppUser> patch)
+        //{
+        //    var user = await _userContext.Users
+        //        .Include(o => o.Properties)
+        //        .SingleOrDefaultAsync(o => o.Id == UserIdentity.UserId);
+        //    //修改更新到实体对象
+        //    patch.ApplyTo(user);
+        //    //如果有修改Properties, 不追踪 AppUser 实体的 Properties 属性 单独通过以下的方法进行处理
+        //    if (user.Properties != null)
+        //    {
+
+        //        foreach (var item in user.Properties)
+        //        {
+        //            _userContext.Entry(item).State = EntityState.Detached;
+        //        }
+
+        //        //Properties 属性 单独通过以下的方法进行处理
+        //        //获取原来用户所有的Properties, 必须使用 AsNoTracking()，否则会自动附加到用户属性上
+        //        var originProperties = await _userContext.UserProperties.AsNoTracking().Where(b => b.AppUserId == UserIdentity.UserId).ToListAsync();
+
+        //        foreach (var item in originProperties.Where(item => !user.Properties.Exists(b => b.Key == item.Key && b.Value == item.Value)))
+        //        {
+        //            //如果不存在做删除操作
+        //            _userContext.Remove(item);
+        //        }
+        //        foreach (var item in user.Properties.Where(item => !originProperties.Exists(b => b.Key == item.Key && b.Value == item.Value)))
+        //        {
+        //            //如果不存在做新增操作
+        //            _userContext.Add(item);
+        //        }
+        //    }
+        //    //更新用户信息
+        //    _userContext.Users.Update(user);
+        //    _userContext.SaveChanges();
+
+        //    return Json(user);
+        //}
+
         [Route("")]
         [HttpPatch]
-        public async Task<IActionResult> Patch([FromBody] JsonPatchDocument<AppUser> patch)
+        public async Task<IActionResult> Patch([FromBody] JsonPatchDocument<Models.AppUser> patch)
         {
             var user = await _userContext.Users
-                .Include(o => o.Properties)
-                .SingleOrDefaultAsync(o => o.Id == UserIdentity.UserId);
-            //修改更新到实体对象
+                .SingleOrDefaultAsync(u => u.Id == UserIdentity.UserId);
+
             patch.ApplyTo(user);
-            //如果有修改Properties, 不追踪 AppUser 实体的 Properties 属性 单独通过以下的方法进行处理
-            if (user.Properties != null)
+            using (var transaction = _userContext.Database.BeginTransaction())
+            {
+                //发布用户变更消息
+                RaiseUserprofileChangedEvent(user);
+
+                _userContext.Users.Update(user);
+                _userContext.SaveChanges();
+
+                transaction.Commit();
+            }
+
+
+
+            return Json(user);
+        }
+
+        /// <summary>
+        /// post修改用户
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [Route("modify_user")]
+        [HttpPost]
+        public async Task<IActionResult> ModifyUser([FromBody]Models.AppUser model)
+        {
+            var user = await _userContext.Users
+              .SingleOrDefaultAsync(u => u.Id == UserIdentity.UserId);
+
+            user.Company = model.Company;
+            user.Title = model.Title;
+            using (var transaction = _userContext.Database.BeginTransaction())
             {
 
-                foreach (var item in user.Properties)
-                {
-                    _userContext.Entry(item).State = EntityState.Detached;
-                }
+                //发布用户变更消息
+                RaiseUserprofileChangedEvent(user);
 
-                //Properties 属性 单独通过以下的方法进行处理
-                //获取原来用户所有的Properties, 必须使用 AsNoTracking()，否则会自动附加到用户属性上
-                var originProperties = await _userContext.UserProperties.AsNoTracking().Where(b => b.AppUserId == UserIdentity.UserId).ToListAsync();
+                _userContext.Users.Update(user);
+                _userContext.SaveChanges();
 
-                foreach (var item in originProperties.Where(item => !user.Properties.Exists(b => b.Key == item.Key && b.Value == item.Value)))
-                {
-                    //如果不存在做删除操作
-                    _userContext.Remove(item);
-                }
-                foreach (var item in user.Properties.Where(item => !originProperties.Exists(b => b.Key == item.Key && b.Value == item.Value)))
-                {
-                    //如果不存在做新增操作
-                    _userContext.Add(item);
-                }
+                transaction.Commit();
             }
-            //更新用户信息
-            _userContext.Users.Update(user);
-            _userContext.SaveChanges();
-
             return Json(user);
         }
         /// <summary>
