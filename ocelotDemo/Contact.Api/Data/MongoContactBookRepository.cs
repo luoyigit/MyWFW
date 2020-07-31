@@ -123,5 +123,11 @@ namespace Contact.Api.Data
 
             return result.MatchedCount == result.ModifiedCount && result.ModifiedCount == 1;
         }
+
+        public async Task<bool> AddTestDataAsync(Test model, CancellationToken cancellationToken)
+        {
+            await _context.Test.InsertOneAsync(model, null, cancellationToken);
+            return true;
+        }
     }
 }

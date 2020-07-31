@@ -66,7 +66,6 @@ E:\vs2019\MyWFW\ocelotDemo\ApiTwo\bin\Debug\netcoreapp3.1\runtimes\unix\lib\nets
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard1.3\System.Net.Http.WinHttpHandler.dll
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\bin\Debug\netcoreapp3.1\ST.Common.dll
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\bin\Debug\netcoreapp3.1\ST.Common.pdb
-E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.csprojAssemblyReference.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.AssemblyInfoInputs.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.AssemblyInfo.cs
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.RazorTargetAssemblyInfo.cache
@@ -78,3 +77,4 @@ E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.pdb
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.genruntimeconfig.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.csproj.CoreCompileInputs.cache
 E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.MvcApplicationPartsAssemblyInfo.cache
+E:\vs2019\MyWFW\ocelotDemo\ApiTwo\obj\Debug\netcoreapp3.1\ApiTwo.csprojAssemblyReference.cache

@@ -15,4 +15,3 @@ E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.Assembly
 E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.csproj.CoreCompileInputs.cache
 E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.dll
 E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.pdb
-E:\vs2019\MyWFW\ocelotDemo\ST.Common\obj\Debug\netstandard2.0\ST.Common.csprojAssemblyReference.cache

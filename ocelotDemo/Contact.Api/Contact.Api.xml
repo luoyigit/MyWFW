@@ -64,6 +64,11 @@
             好友申请请求集合
             </summary>
         </member>
+        <member name="P:Contact.Api.Data.ContactContext.Test">
+            <summary>
+            测试表
+            </summary>
+        </member>
         <member name="T:Contact.Api.Data.IContactApplyRequestRepository">
             <summary>
             好友申请仓储
@@ -129,6 +134,14 @@
             </summary>
             <param name="userId">用户ID</param>
             <param name="baseUserInfo">待添加的用户信息</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contact.Api.Data.IContactBookRepository.AddTestDataAsync(Contact.Api.Models.Test,System.Threading.CancellationToken)">
+            <summary>
+            添加测试数据
+            </summary>
+            <param name="model"></param>
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
@@ -330,6 +343,11 @@
         <member name="P:Contact.Api.Models.ContactBook.Contacts">
             <summary>
             好友列表
+            </summary>
+        </member>
+        <member name="T:Contact.Api.Models.Test">
+            <summary>
+            测试表
             </summary>
         </member>
         <member name="M:Contact.Api.Services.IUserService.GetBaseUserInfoAsync(System.Int32)">

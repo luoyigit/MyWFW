@@ -61,5 +61,17 @@ namespace Contact.Api.Data
                 return _database.GetCollection<ContactApplyRequest>("ContactApplyRequest");
             }
         }
+
+        /// <summary>
+        /// 测试表
+        /// </summary>
+        public IMongoCollection<Test> Test
+        {
+            get
+            {
+                CheckAndCreateCollection("Test");
+                return _database.GetCollection<Test>("Test");
+            }
+        }
     }
 }

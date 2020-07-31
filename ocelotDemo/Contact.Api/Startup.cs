@@ -85,11 +85,19 @@ namespace Contact.Api
             services.AddScoped<UserProfileChangedEventHandler>(); //要注册进来，否则cap找不到订阅者
             services.AddControllers();
 
-   
             services.AddCap(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SqlServerContact"))
-                    .UseRabbitMQ("localhost");
+                //.UseRabbitMQ("localhost");
+                //.UseRabbitMQ(Configuration["Cap:MqHost"]);
+                //.UseRabbitMQ("127.0.0.1");
+                .UseRabbitMQ(options =>
+                {
+                    options.HostName = Configuration["Cap:MqHost"];
+                    options.UserName = Configuration["Cap:MqUserName"];
+                    options.Password = Configuration["Cap:MqPassword"];
+
+                });
 
                 options.UseDashboard();
 
@@ -97,9 +105,10 @@ namespace Contact.Api
                     {
                         d.DiscoveryServerHostName = "192.168.1.165";
                         d.DiscoveryServerPort = 8500;
-                        d.CurrentNodeHostName = "localhost";
-                        d.CurrentNodePort = 5002;
-                        d.NodeId = "2";
+                        d.CurrentNodeHostName = Configuration["LocalService:HttpHost"]; //; "localhost";
+                        d.CurrentNodePort = Convert.ToInt32(Configuration["LocalService:HttpPort"]);
+                        //d.NodeId = "2";
+                        d.NodeId = Configuration["LocalService:HostTag"];
                         d.NodeName = "CAP ContactAPI Node";
                     });
             });

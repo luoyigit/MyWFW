@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Contact.Api.Dtos;
+using Contact.Api.Models;
 
 namespace Contact.Api.Data
 {
@@ -48,5 +49,13 @@ namespace Contact.Api.Data
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task<bool> AddContactAsync(int userId, BaseUserInfo baseUserInfo, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// 添加测试数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<bool> AddTestDataAsync(Test model, CancellationToken cancellationToken);
     }
 }

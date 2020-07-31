@@ -89,7 +89,13 @@ namespace User.Api
             {
                 //docker安装RabbitMQ：docker run --name rabbitmq -d -p 15672:15672 -p 5672:5672 rabbitmq:3-management
                 options.UseEntityFramework<UserContext>()
-                    .UseRabbitMQ("localhost")
+                    .UseRabbitMQ(options =>
+                    {
+                        options.HostName = Configuration["Cap:MqHost"];
+                        options.UserName = Configuration["Cap:MqUserName"];
+                        options.Password = Configuration["Cap:MqPassword"];
+
+                    })
                     .UseDashboard();
 
                 //服务发现的服务器节点
