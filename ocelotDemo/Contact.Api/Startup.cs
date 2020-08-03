@@ -118,10 +118,10 @@ namespace Contact.Api
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://localhost:9000";
+                    options.Authority = Configuration["Gateway:Address"];
                     //options.Authority = "http://localhost:61114"; //一般写网关地址进行转发（因为indentity server 可能有多个）
                     options.RequireHttpsMetadata = false;
-                    options.ApiName = "contact_api";
+                    options.ApiName = Configuration["IndetityServer:ApiName"];
                     options.SaveToken = true; //保存token，在发起user_api的时候可以取出带上
 
                 });

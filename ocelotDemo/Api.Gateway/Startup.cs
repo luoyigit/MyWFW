@@ -6,6 +6,7 @@ using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Ocelot.DependencyInjection;
@@ -16,6 +17,11 @@ namespace Api.Gateway
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -25,10 +31,10 @@ namespace Api.Gateway
              services.AddAuthentication()
                  .AddIdentityServerAuthentication("TestKey", options =>
                  {
-                     options.Authority = "http://localhost:9000";
-                     options.ApiName = "gateway_api";
+                     options.Authority = Configuration["IndetityServer:Address"];
+                     options.ApiName = Configuration["IndetityServer:ApiName"];
                      options.SupportedTokens = SupportedTokens.Both;
-                     options.ApiSecret = "secret";
+                     options.ApiSecret = Configuration["IndetityServer:Secret"];
                      options.RequireHttpsMetadata = false;
                  });
             services.AddOcelot().AddConsul();

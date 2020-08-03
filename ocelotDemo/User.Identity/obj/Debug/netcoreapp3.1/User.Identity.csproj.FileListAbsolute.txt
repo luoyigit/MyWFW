@@ -92,7 +92,6 @@ E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\Resilience.dll
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\ST.Common.dll
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\Resilience.pdb
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\ST.Common.pdb
-E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.csprojAssemblyReference.cache
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.AssemblyInfoInputs.cache
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.AssemblyInfo.cs
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.csproj.CoreCompileInputs.cache
@@ -104,3 +103,4 @@ E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\staticwebassets
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.dll
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.pdb
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.genruntimeconfig.cache
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.csprojAssemblyReference.cache

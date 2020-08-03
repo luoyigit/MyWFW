@@ -113,7 +113,7 @@
     //}
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://127.0.0.1:61114", //网关所在地址
+    "BaseUrl": "http://192.168.1.165:61114", //网关所在地址
     "RequestIdKey": "OcelotRequestId",
     "ServiceDiscoveryProvider": {
       "Scheme": "http",

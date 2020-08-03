@@ -13,14 +13,19 @@ namespace User.Api
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            //CreateHostBuilder(args).Build().Run();
+            var config = new ConfigurationBuilder()
+.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+.Build();
+            var url = $"http://{config["LocalService:HttpHost"]}:{config["LocalService:HttpPort"]}";
+            CreateHostBuilder(args, url).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        public static IHostBuilder CreateHostBuilder(string[] args, string startUrl) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls(startUrl).UseStartup<Startup>();
                 });
     }
 }

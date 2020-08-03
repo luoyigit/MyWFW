@@ -79,10 +79,11 @@ namespace User.Api
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    //options.Authority = "http://localhost:9000";
-                    options.Authority = "http://localhost:61114"; //一般写网关地址进行转发（因为indentity server 可能有多个）
+                    //options.Authority = "http://localhost:9000"; //
+                    options.Authority = Configuration["Gateway:Address"]; //一般写网关地址进行转发（因为indentity server 可能有多个）//这个需要和请求token 地址一致才能拿到claims
                     options.RequireHttpsMetadata = false;
-                    options.ApiName = "user_api";
+                    //options.ApiName = "user_api";
+                    options.ApiName = Configuration["IndetityServer:ApiName"];
 
                 });
             services.AddCap(options =>
@@ -103,9 +104,9 @@ namespace User.Api
                 {
                     d.DiscoveryServerHostName = "192.168.1.165";
                     d.DiscoveryServerPort = 8500;
-                    d.CurrentNodeHostName = "localhost";
-                    d.CurrentNodePort = 5001;
-                    d.NodeId = "1";
+                    d.CurrentNodeHostName = Configuration["LocalService:HttpHost"];
+                    d.CurrentNodePort = Convert.ToInt32(Configuration["LocalService:HttpPort"]);
+                    d.NodeId = Configuration["LocalService:HostTag"];
                     d.NodeName = "CAP User API Node";
                 });
             });
