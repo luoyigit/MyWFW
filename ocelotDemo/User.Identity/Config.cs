@@ -12,26 +12,47 @@ namespace User.Identity
         {
             return new List<ApiResource>()
             {
+                //new ApiResource("gateway_api","#gateway_api")
+                //{
+                //    //!!!重要
+                //    Scopes = { "gateway_api", "one_api", "user_api", "contact_api" }
+                //},
+                // new ApiResource("one_api","#one_api")
+                //{
+                //    //!!!重要
+                //    Scopes = { "gateway_api", "one_api", "user_api", "contact_api" }
+                //},
+                // new ApiResource("user_api","#user_api")
+                //{
+                //    //!!!重要
+                //    Scopes = { "gateway_api", "one_api", "user_api", "contact_api" }
+                //},
+                //new ApiResource("contact_api","#contact_api")
+                //{
+                //    //!!!重要
+                //    Scopes = { "gateway_api", "one_api", "user_api", "contact_api" }
+                //},
                 new ApiResource("gateway_api","gateway service"),
                 new ApiResource("one_api","one service"),
                 new ApiResource("user_api", "user service"),
                 new ApiResource("contact_api","contact service"),
-                //new ApiResource("project_api","project service"),
-                //new ApiResource("recommend_api","recommend service") 
+                new ApiResource("project_api","project service"),
+                new ApiResource("recommend_api","recommend service")
             };
         }
-        //public static IEnumerable<ApiScope> GetApiScopes()
-        //{
-        //    return new List<ApiScope>
-        //    {
-        //        // backward compat
-        //        new ApiScope("one_api.scope"),
-        //        new ApiScope("two_api.scope"),
-   
-        //    };
-        //}
-
-
+        public static IEnumerable<ApiScope> GetApiScopes()
+        {
+            return new List<ApiScope>
+            {
+                // backward compat
+                new ApiScope("gateway_api"),
+                new ApiScope("one_api"),
+                new ApiScope("user_api"),
+                new ApiScope("contact_api"),
+                new ApiScope("project_api"),
+                new ApiScope("recommend_api")
+            };
+        }
         public static IEnumerable<Client> GetClients()
         {
             return  new List<Client>()
@@ -47,7 +68,6 @@ namespace User.Identity
                     RefreshTokenUsage = TokenUsage.OneTimeOnly,
                     AllowedGrantTypes = new List<string>(){"sms_auth_code","refresh_token"},// 继承IExtensionGrantValidator
                     AlwaysIncludeUserClaimsInIdToken = true,
-                  
                     AllowedScopes = new List<string>()
                     {
                         "gateway_api",

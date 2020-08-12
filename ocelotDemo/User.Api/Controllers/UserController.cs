@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DotNetCore.CAP;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ST.Infrastructure;
 using User.Api.Data;
@@ -24,16 +26,19 @@ namespace User.Api.Controllers
         private readonly ILogger<UserController> _logger;
         private readonly ICapPublisher _publisher;
 
+        public IConfiguration Configuration;
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="userContext"></param>
         /// <param name="logger"></param>
-        public UserController(UserContext userContext, ILogger<UserController> logger, ICapPublisher publisher) : base(logger)
+        public UserController(UserContext userContext, ILogger<UserController> logger, ICapPublisher publisher, IConfiguration configuration) : base(logger)
         {
             _userContext = userContext;
             _logger = logger;
             _publisher = publisher;
+            Configuration = configuration;
         }
 
         /// <summary>
@@ -53,6 +58,25 @@ namespace User.Api.Controllers
 
             return Ok(user);
         }
+
+        /// <summary>
+        /// 登录用户获取个人信息
+        /// </summary>
+        /// <returns></returns>
+        [Route("test")]
+        [HttpGet]
+        public async Task<IActionResult> Get2()
+        {
+            var user = await _userContext.Users
+                .AsNoTracking()
+                .Include(o => o.Properties)
+                .SingleOrDefaultAsync(o => o.Id == UserIdentity.UserId);
+            if (user == null)
+                throw new UserOperationException($"错误的用户编号：{UserIdentity.UserId}");
+            user.Title = $"来自{Configuration["LocalService:HostTag"]}";
+            return Ok(user);
+        }
+
         private void RaiseUserprofileChangedEvent(AppUser user)
         {
             if (_userContext.Entry(user).Property(nameof(user.Name)).IsModified ||
@@ -172,6 +196,7 @@ namespace User.Api.Controllers
         /// <returns>用户ID</returns>
         [Route("check-or-create")]
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> CheckOrCreateUser(string phone)
         {
             var user = await _userContext.Users.SingleOrDefaultAsync(b => b.Phone == phone);

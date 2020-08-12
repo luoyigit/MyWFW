@@ -9,7 +9,7 @@
             
             </summary>
         </member>
-        <member name="M:User.Api.Controllers.UserController.#ctor(User.Api.Data.UserContext,Microsoft.Extensions.Logging.ILogger{User.Api.Controllers.UserController},DotNetCore.CAP.ICapPublisher)">
+        <member name="M:User.Api.Controllers.UserController.#ctor(User.Api.Data.UserContext,Microsoft.Extensions.Logging.ILogger{User.Api.Controllers.UserController},DotNetCore.CAP.ICapPublisher,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             
             </summary>
@@ -17,6 +17,12 @@
             <param name="logger"></param>
         </member>
         <member name="M:User.Api.Controllers.UserController.Get">
+            <summary>
+            登录用户获取个人信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:User.Api.Controllers.UserController.Get2">
             <summary>
             登录用户获取个人信息
             </summary>
@@ -69,6 +75,11 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
+        </member>
+        <member name="T:User.Api.Filters.ApiAuthorize">
+            <summary>
+            重写实现处理授权失败时返回json,避免跳转登录页
+            </summary>
         </member>
         <member name="P:User.Api.IntergrationEventService.UserInfoEventModel.UserId">
             <summary>

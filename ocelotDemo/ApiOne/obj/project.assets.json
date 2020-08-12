@@ -4228,9 +4228,7 @@
         "netcoreapp3.1"
       ],
       "sources": {
-        "http://nuget.youzuowei.com.cn/nuget/": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.cnblogs.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {

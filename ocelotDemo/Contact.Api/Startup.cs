@@ -103,12 +103,12 @@ namespace Contact.Api
 
                 options.UseDiscovery(d =>
                     {
-                        d.DiscoveryServerHostName = "192.168.1.165";
-                        d.DiscoveryServerPort = 8500;
+                        d.DiscoveryServerHostName = Configuration["ServiceDiscovery:Consul:DnsEndpoint:Address"];
+                        d.DiscoveryServerPort = Convert.ToInt32(Configuration["ServiceDiscovery:Consul:DnsEndpoint:Port"]);
                         d.CurrentNodeHostName = Configuration["LocalService:HttpHost"]; //; "localhost";
                         d.CurrentNodePort = Convert.ToInt32(Configuration["LocalService:HttpPort"]);
                         //d.NodeId = "2";
-                        d.NodeId = Configuration["LocalService:HostTag"];
+                        d.NodeId = Configuration["Cap:ConsulNodeId"];
                         d.NodeName = "CAP ContactAPI Node";
                     });
             });

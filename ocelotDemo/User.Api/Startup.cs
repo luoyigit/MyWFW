@@ -15,8 +15,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ST.Common.Consul;
+using User.Api.Authorization;
 using User.Api.Data;
 using User.Api.Filters;
 using User.Api.IntergrationEventService;
@@ -43,6 +45,7 @@ namespace User.Api
             services.AddControllers(options =>
             {
                 options.Filters.Add<GlobalExceptionFilter>();
+                options.Filters.Add(new TestAuthorizationFilter());
             });
 
             services.AddDbContext<UserContext>(builder =>
@@ -75,17 +78,32 @@ namespace User.Api
             });
             services.AddTransient<IUserCreateSubscriberService, UserCreateSubscriberService>();
 
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddIdentityServerAuthentication(options =>
-                {
-                    //options.Authority = "http://localhost:9000"; //
-                    options.Authority = Configuration["Gateway:Address"]; //一般写网关地址进行转发（因为indentity server 可能有多个）//这个需要和请求token 地址一致才能拿到claims
-                    options.RequireHttpsMetadata = false;
-                    //options.ApiName = "user_api";
-                    options.ApiName = Configuration["IndetityServer:ApiName"];
+            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddIdentityServerAuthentication(options =>
+            //    {
+            //        //options.Authority = "http://localhost:9000"; //
+            //        options.Authority = Configuration["Gateway:Address"]; //一般写网关地址进行转发（因为indentity server 可能有多个）//这个需要和请求token 地址一致才能拿到claims
+            //        options.RequireHttpsMetadata = false;
+            //        //options.ApiName = "user_api";
+            //        options.ApiName = Configuration["IndetityServer:ApiName"];
 
-                });
+            //    });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+             .AddJwtBearer(options =>
+             {
+                    //IdentityServer地址
+                  options.Authority = Configuration["Gateway:Address"];
+                 //对应Idp中ApiResource的Name
+                 options.Audience = Configuration["IndetityServer:ApiName"];
+                    //不使用https
+                 options.RequireHttpsMetadata = false;
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateAudience = false
+                 };
+             });
+
             services.AddCap(options =>
             {
                 //docker安装RabbitMQ：docker run --name rabbitmq -d -p 15672:15672 -p 5672:5672 rabbitmq:3-management
@@ -113,7 +131,9 @@ namespace User.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app,
+            IWebHostEnvironment env
+            )
         {
             if (env.IsDevelopment())
             {

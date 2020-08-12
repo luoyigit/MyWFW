@@ -32,6 +32,7 @@ namespace ApiOne
             services.AddConsulClient(Configuration.GetSection("ServiceDiscovery"))
                 .AddDnsClient();
             services.AddControllers();
+
             //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

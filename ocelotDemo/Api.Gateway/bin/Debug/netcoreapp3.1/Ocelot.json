@@ -51,11 +51,11 @@
       "LoadBalancerOptions": {
         "Type": "LeastConnection"
       },
-      "UseServiceDiscovery": true,
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
-        "AllowedScopes": []
-      }
+      "UseServiceDiscovery": true
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "TestKey",
+      //  "AllowedScopes": [""]
+      //}
     },
     {
       "DownstreamPathTemplate": "/.well-known/{catchAll}",
@@ -65,12 +65,6 @@
         "Type": "LeastConnection"
       },
       "UseServiceDiscovery": true,
-      //"DownstreamHostAndPorts": [
-      //  {
-      //    "Host": "localhost",
-      //    "Port": 9000
-      //  }
-      //],
       "UpstreamPathTemplate": "/.well-known/{catchAll}",
       "UpstreamHttpMethod": [ "Get" ]
     },
@@ -83,12 +77,6 @@
         "Type": "LeastConnection"
       },
       "UseServiceDiscovery": true,
-      //"DownstreamHostAndPorts": [
-      //  {
-      //    "Host": "localhost",
-      //    "Port": 9000
-      //  }
-      //],
       "UpstreamPathTemplate": "/connect/{catchAll}",
       "UpstreamHttpMethod": [ "Post" ]
     }
