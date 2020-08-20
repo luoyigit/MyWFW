@@ -26,6 +26,11 @@ namespace User.Api
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseUrls(startUrl).UseStartup<Startup>();
+                })
+                .UseDefaultServiceProvider(options => //·ÀÖ¹scope ×¢Èë Cannot resolve scoped service 'XXX' from root provider
+                {
+                    options.ValidateScopes = false;
                 });
+
     }
 }

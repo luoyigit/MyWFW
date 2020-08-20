@@ -312,5 +312,12 @@
               重写当前线程的 CurrentUICulture 属性。
             </summary>
         </member>
+        <member name="M:User.Api.Rpc.UserService.GetBaseUserInfoAsync(User.GrpcService.Models.Request.GetUserInfoByIdRequest)">
+            <summary>
+            获取用户基本信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -58,6 +58,21 @@
       //}
     },
     {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/p/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post","Put" ],
+      "ServiceName": "ProjectApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "TestKey",
+      //  "AllowedScopes": [""]
+      //}
+    },
+    {
       "DownstreamPathTemplate": "/.well-known/{catchAll}",
       "DownstreamScheme": "http",
       "ServiceName": "IdentityApi",

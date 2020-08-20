@@ -18,6 +18,8 @@ using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ST.Common.Consul;
+using ST.Common.MagicOnion;
+using ST.Infrastructure.DI;
 using User.Api.Authorization;
 using User.Api.Data;
 using User.Api.Filters;
@@ -47,7 +49,8 @@ namespace User.Api
                 options.Filters.Add<GlobalExceptionFilter>();
                 options.Filters.Add(new TestAuthorizationFilter());
             });
-
+            //添加rpc
+            services.AddGrpc(Configuration.GetSection("RpcDiscovery"));
             services.AddDbContext<UserContext>(builder =>
             {
                 builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -100,9 +103,11 @@ namespace User.Api
                  options.RequireHttpsMetadata = false;
                  options.TokenValidationParameters = new TokenValidationParameters
                  {
-                     ValidateAudience = false
+                     ValidateAudience = false,
+                     ValidateIssuer = false
                  };
              });
+
 
             services.AddCap(options =>
             {
@@ -128,6 +133,8 @@ namespace User.Api
                     d.NodeName = "CAP User API Node";
                 });
             });
+
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -135,6 +142,7 @@ namespace User.Api
             IWebHostEnvironment env
             )
         {
+            app.UseHttpsRedirection().UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -157,6 +165,15 @@ namespace User.Api
             //app.UseCap();
             //启用服务注册于发现
             app.UseConsul();
+            //注册和启动rpc服务
+            app.UseRpc();
+
+            #region 注入服务引擎
+            var provider = app.ApplicationServices;
+            IEngine engine = new Engine(provider);
+            EngineContext.Init(engine);
+            #endregion
+
             //dataInit(app);
         }
 

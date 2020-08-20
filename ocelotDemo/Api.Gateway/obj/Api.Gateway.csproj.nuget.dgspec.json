@@ -24,6 +24,7 @@
           "netcoreapp3.1"
         ],
         "sources": {
+          "http://nuget.youzuowei.com.cn/nuget/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,6 +53,10 @@
               "target": "Package",
               "version": "[3.0.1, )"
             },
+            "Microsoft.Extensions.PlatformAbstractions": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Ocelot": {
               "target": "Package",
               "version": "[16.0.1, )"
@@ -59,6 +64,10 @@
             "Ocelot.Provider.Consul": {
               "target": "Package",
               "version": "[16.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
             }
           },
           "imports": [

@@ -14,6 +14,9 @@ using User.Identity.Models;
 
 namespace User.Identity.Services
 {
+    /// <summary>
+    /// RESTful HTTP
+    /// </summary>
     public class UserService : IUserService
     {
         //private readonly HttpClient _httpClient;

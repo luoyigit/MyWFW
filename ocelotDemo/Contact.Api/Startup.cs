@@ -104,7 +104,7 @@ namespace Contact.Api
                 options.UseDiscovery(d =>
                     {
                         d.DiscoveryServerHostName = Configuration["ServiceDiscovery:Consul:DnsEndpoint:Address"];
-                        d.DiscoveryServerPort = Convert.ToInt32(Configuration["ServiceDiscovery:Consul:DnsEndpoint:Port"]);
+                        d.DiscoveryServerPort = 8500;
                         d.CurrentNodeHostName = Configuration["LocalService:HttpHost"]; //; "localhost";
                         d.CurrentNodePort = Convert.ToInt32(Configuration["LocalService:HttpPort"]);
                         //d.NodeId = "2";

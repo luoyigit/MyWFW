@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Project.API.Applications.Commands;
 using Project.API.Applications.Queries;
 using Project.API.Applications.Service;
+using Project.API.FormModels;
 using Project.Domain.AggregatesModel;
 
 namespace Project.API.Controllers
@@ -27,7 +28,7 @@ namespace Project.API.Controllers
 
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> CreateProject([FromBody]Domain.AggregatesModel.Project project)
+        public async Task<IActionResult> CreateProject([FromBody] Domain.AggregatesModel.Project project)
         {
             try
             {
@@ -48,6 +49,28 @@ namespace Project.API.Controllers
             }
         }
 
+        //[HttpPost]
+        //[Route("")]
+        //public async Task<IActionResult> CreateProject([FromBody] CreateProjectFormModel project)
+        //{
+        //    try
+        //    {
+        //        if (project == null)
+        //        {
+        //            throw new ArgumentException(nameof(project));
+        //        }
+
+        //        project.UserId = UserIdentity.UserId;
+
+        //        var command = new CreateProjectCommand() { Project = project };
+        //        var result = await _mediator.Send(command);
+        //        return Ok(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //}
         [HttpPut]
         [Route("view/{projectId}")]
         public async Task<IActionResult> ViewProject(int projectId)

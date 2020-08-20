@@ -74,6 +74,7 @@ namespace User.Identity
                          "one_api",
                          "contact_api",
                          "user_api",
+                         "recommend_api",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess

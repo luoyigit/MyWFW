@@ -81,9 +81,6 @@ E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\Ocelot.Provider.C
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.AssemblyInfoInputs.cache
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.AssemblyInfo.cs
-E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.csproj.CoreCompileInputs.cache
-E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.MvcApplicationPartsAssemblyInfo.cs
-E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.MvcApplicationPartsAssemblyInfo.cache
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.RazorTargetAssemblyInfo.cache
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.csproj.CopyComplete
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\staticwebassets\Api.Gateway.StaticWebAssets.Manifest.cache
@@ -91,4 +88,13 @@ E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\staticwebassets\A
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.dll
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.pdb
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.genruntimeconfig.cache
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.csproj.CoreCompileInputs.cache
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.MvcApplicationPartsAssemblyInfo.cs
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.MvcApplicationPartsAssemblyInfo.cache
+E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\bin\Debug\netcoreapp3.1\Api.Gateway.xml
 E:\vs2019\MyWFW\ocelotDemo\Api.Gateway\obj\Debug\netcoreapp3.1\Api.Gateway.csprojAssemblyReference.cache

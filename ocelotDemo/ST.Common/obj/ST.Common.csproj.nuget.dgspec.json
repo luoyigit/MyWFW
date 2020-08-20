@@ -24,6 +24,7 @@
           "netstandard2.0"
         ],
         "sources": {
+          "http://nuget.youzuowei.com.cn/nuget/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,6 +48,10 @@
             "DnsClient": {
               "target": "Package",
               "version": "[1.3.1, )"
+            },
+            "MagicOnion": {
+              "target": "Package",
+              "version": "[3.0.13, )"
             },
             "Microsoft.AspNetCore.Hosting.Abstractions": {
               "target": "Package",

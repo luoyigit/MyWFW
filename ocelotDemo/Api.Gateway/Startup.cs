@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4.AccessTokenValidation;
@@ -10,7 +11,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
@@ -30,32 +33,33 @@ namespace Api.Gateway
         {
             //添加IdentityServer4身份认证
             //IdentityServer4.AccessTokenValidation
-            //services.AddAuthentication()
-            //    .AddIdentityServerAuthentication("TestKey", options =>
-            //    {
-            //        options.Authority = Configuration["IndetityServer:Address"];
-            //        options.ApiName = Configuration["IndetityServer:ApiName"];
-            //        options.SupportedTokens = SupportedTokens.Both;
-            //        options.ApiSecret = Configuration["IndetityServer:Secret"];
-            //        options.RequireHttpsMetadata = false;
-            //    });
+            services.AddAuthentication()
+                .AddIdentityServerAuthentication("TestKey", options =>
+                {
+                    options.Authority = Configuration["IndetityServer:Address"];
+                    options.ApiName = Configuration["IndetityServer:ApiName"];
+                    options.SupportedTokens = SupportedTokens.Both;
+                    options.ApiSecret = Configuration["IndetityServer:Secret"];
+                    options.RequireHttpsMetadata = false;
+                });
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-             .AddJwtBearer(options =>
-             {
-                 //IdentityServer地址
-                 options.Authority = Configuration["IndetityServer:Address"];
-                 //对应Idp中ApiResource的Name
-                 //options.Audience = Configuration["IndetityServer:ApiName"];
-                 //不使用https
-                 options.RequireHttpsMetadata = false;
-                 options.TokenValidationParameters = new TokenValidationParameters
-                 {
-                     ValidateAudience = false, //如果没有这个，所有都是401
-                                               //ValidateIssuer = false
-                   };
-             });
-
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            // .AddJwtBearer(options =>
+            // {
+            //     //IdentityServer地址
+            //     options.Authority = Configuration["IndetityServer:Address"];
+            //     //对应Idp中ApiResource的Name
+            //     //options.Audience = Configuration["IndetityServer:ApiName"];
+            //     //不使用https
+            //     options.RequireHttpsMetadata = false;
+            //     options.TokenValidationParameters = new TokenValidationParameters
+            //     {
+            //         ValidateAudience = false, //如果没有这个，所有都是401
+            //                                   //ValidateIssuer = false
+            //       };
+            // });
+       
+         
             services.AddOcelot().AddConsul();
         }
 
@@ -76,10 +80,11 @@ namespace Api.Gateway
                     await context.Response.WriteAsync($"Hello World!{Configuration["LocalService:HostTag"]}");
                 });
             });
-            //app.UseOcelot();
-            app.UseAuthentication()
-            .UseOcelot()
-            .Wait();
+
+            app.UseOcelot();
+            //app.UseAuthentication()
+            //.UseOcelot()
+            //.Wait();
         }
     }
 }

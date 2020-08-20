@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ST.Common.Consul;
-
+using ST.Common.MagicOnion;
 namespace ApiOne
 {
     public class Startup
@@ -32,7 +32,7 @@ namespace ApiOne
             services.AddConsulClient(Configuration.GetSection("ServiceDiscovery"))
                 .AddDnsClient();
             services.AddControllers();
-
+            services.AddGrpcClient();
             //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

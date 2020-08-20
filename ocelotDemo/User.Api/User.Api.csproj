@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ST.Common\ST.Common.csproj" />
     <ProjectReference Include="..\ST.Infrastructure\ST.Infrastructure.csproj" />
+    <ProjectReference Include="..\User.GrpcService\User.GrpcService.csproj" />
   </ItemGroup>
 
   <ItemGroup>

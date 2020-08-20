@@ -137,3 +137,15 @@ E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.c
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\obj\Debug\netcoreapp3.1\User.Identity.MvcApplicationPartsAssemblyInfo.cache
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\tempkey.jwk
 E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\tempkey.rsa
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\Grpc.Core.dll
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\Grpc.Core.Api.dll
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\MagicOnion.dll
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\MagicOnion.Abstractions.dll
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\MessagePack.dll
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\MessagePack.Annotations.dll
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\runtimes\linux\native\libgrpc_csharp_ext.x64.so
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\runtimes\linux\native\libgrpc_csharp_ext.x86.so
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\runtimes\osx\native\libgrpc_csharp_ext.x64.dylib
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\runtimes\osx\native\libgrpc_csharp_ext.x86.dylib
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\runtimes\win\native\grpc_csharp_ext.x64.dll
+E:\vs2019\MyWFW\ocelotDemo\User.Identity\bin\Debug\netcoreapp3.1\runtimes\win\native\grpc_csharp_ext.x86.dll
