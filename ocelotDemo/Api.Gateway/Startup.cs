@@ -81,7 +81,7 @@ namespace Api.Gateway
                 });
             });
 
-            app.UseOcelot();
+            app.UseOcelot().Wait();
             //app.UseAuthentication()
             //.UseOcelot()
             //.Wait();

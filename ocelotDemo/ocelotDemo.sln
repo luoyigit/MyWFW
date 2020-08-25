@@ -45,9 +45,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserRpc", "UserRpc", "{8339
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ST.Grpc", "ST.Grpc\ST.Grpc.csproj", "{E4618C13-6044-4A25-B229-C816E4061E98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Grpc", "User.Grpc\User.Grpc.csproj", "{574651FB-7890-48E3-A9B4-0E4BCE925206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Grpc", "User.Grpc\User.Grpc.csproj", "{574651FB-7890-48E3-A9B4-0E4BCE925206}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.GrpcService", "User.GrpcService\User.GrpcService.csproj", "{E92ACED9-26F2-41EF-9EEA-04853C604E85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.GrpcService", "User.GrpcService\User.GrpcService.csproj", "{E92ACED9-26F2-41EF-9EEA-04853C604E85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServicesManager", "ServicesManager", "{2EBDD35D-73F1-473E-AAFE-A750A27E3D11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

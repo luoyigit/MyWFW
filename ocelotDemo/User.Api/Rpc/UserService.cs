@@ -3,6 +3,7 @@ using MagicOnion.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ST.Infrastructure;
 using ST.Infrastructure.DI;
 using System;

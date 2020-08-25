@@ -125,7 +125,7 @@ namespace User.Api
                 //服务发现的服务器节点
                 options.UseDiscovery(d =>
                 {
-                    d.DiscoveryServerHostName = "192.168.1.165";
+                    d.DiscoveryServerHostName = Configuration["ServiceDiscovery:Consul:DnsEndpoint:Address"];
                     d.DiscoveryServerPort = 8500;
                     d.CurrentNodeHostName = Configuration["LocalService:HttpHost"];
                     d.CurrentNodePort = Convert.ToInt32(Configuration["LocalService:HttpPort"]);

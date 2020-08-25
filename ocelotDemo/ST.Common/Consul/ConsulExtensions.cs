@@ -136,6 +136,26 @@ namespace ST.Common.Consul
                     //向Consul 中心进行注册
                     consulClient.Agent.ServiceRegister(registration).GetAwaiter().GetResult();
                 }
+
+
+                //register localhost address
+                //注册本地地址
+                //var localhostregistration = new AgentServiceRegistration()
+                //{
+                //    Checks = new[] { new AgentServiceCheck()
+                //{
+                //    DeregisterCriticalServiceAfter = TimeSpan.FromMinutes(1),
+                //    Interval = TimeSpan.FromSeconds(10),
+                //    //HTTP = $"{Uri.UriSchemeHttp}://localhost:{addresses.First().Port}/HealthCheck",
+                //    HTTP =new Uri(addresses.First(), "HealthCheck").OriginalString
+                //} },
+                //    Address = "localhost",
+                //    ID = $"{serviceOptions.Value.ServiceName}_localhost:{addresses.First().Port}",
+                //    Name = serviceOptions.Value.ServiceName,
+                //    Port = addresses.First().Port
+                //};
+
+                //consulClient.Agent.ServiceRegister(localhostregistration).GetAwaiter().GetResult();
             });
 
             //在程序停止时,向Consul 中心进行注销

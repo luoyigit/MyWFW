@@ -9,7 +9,10 @@ namespace ST.Infrastructure
     [MessagePackObject(true)]
     public class BaseResponse<T>
     {
-        public BaseResponse() { }
+        public BaseResponse() 
+        {
+            this.Success = true;
+        }
 
         public BaseResponse(bool result, string msg = "", string errCode = "")
         {

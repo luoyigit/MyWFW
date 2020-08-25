@@ -54,11 +54,11 @@ namespace IdentityGateway
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!Œ“ «identityserver Õ¯πÿ");
+                    await context.Response.WriteAsync($"Hello World!{Configuration["LocalService:HostTag"]}");
                 });
             });
 
-            app.UseOcelot();
+            app.UseOcelot().Wait();
         }
     }
 }

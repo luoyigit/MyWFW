@@ -51,11 +51,26 @@
       "LoadBalancerOptions": {
         "Type": "LeastConnection"
       },
-      "UseServiceDiscovery": true,
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
-        "AllowedScopes": []
-      }
+      "UseServiceDiscovery": true
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "TestKey",
+      //  "AllowedScopes": [""]
+      //}
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/p/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "ServiceName": "ProjectApi",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "UseServiceDiscovery": true
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "TestKey",
+      //  "AllowedScopes": [""]
+      //}
     },
     {
       "DownstreamPathTemplate": "/.well-known/{catchAll}",
@@ -102,10 +117,11 @@
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://192.168.1.165:61114", //网关所在地址
-    "RequestIdKey": "OcelotRequestId",
+    //"RequestIdKey": "OcelotRequestId",
+    "RequestIdKey": null,
     "ServiceDiscoveryProvider": {
       "Scheme": "http",
-      "Host": "192.168.1.165",
+      "Host": "192.168.1.202",
       "Port": 8500,
       "Type": "Consul",
       "ConfigurationKey": "Ocelot_A",

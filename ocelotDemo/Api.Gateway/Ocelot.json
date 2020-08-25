@@ -120,7 +120,7 @@
     "RequestIdKey": "OcelotRequestId",
     "ServiceDiscoveryProvider": {
       "Scheme": "http",
-      "Host": "192.168.1.165",
+      "Host": "192.168.1.202",
       "Port": 8500,
       "Type": "Consul",
       "ConfigurationKey": "Ocelot_A",
