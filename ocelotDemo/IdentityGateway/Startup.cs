@@ -37,6 +37,7 @@ namespace IdentityGateway
                     options.ApiSecret = Configuration["IndetityServer:Secret"];
                     options.RequireHttpsMetadata = false;
                 });
+
             services.AddOcelot().AddConsul();
         }
 
